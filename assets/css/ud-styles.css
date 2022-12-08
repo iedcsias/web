@@ -455,6 +455,10 @@ p {
   background: transparent;
 }
 
+.navelist{
+  justify-content: flex-end;
+}
+
 .navbar-btn .ud-login-btn:hover {
   opacity: 0.5;
 }
