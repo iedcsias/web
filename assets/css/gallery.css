@@ -1,0 +1,44 @@
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+.gallery > .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.gallery > .container > div {
+  width: 300px;
+  height: 220px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.gallery > .container > div > img {
+  width: 100%;
+}
+
+@media screen and (max-width: 771px) {
+  .gallery > .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .gallery > .container > div {
+    width: 40%;
+    height: 150px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+}
