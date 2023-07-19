@@ -16,9 +16,8 @@
 }
 
 .gallery > .container > div {
-  width: 300px;
+  width: 350px;
   height: 220px;
-  border-radius: 20px;
   overflow: hidden;
 }
 
@@ -36,9 +35,8 @@
   }
 
   .gallery > .container > div {
-    width: 40%;
+    width: 47%;
     height: 150px;
-    border-radius: 20px;
     overflow: hidden;
   }
 }
