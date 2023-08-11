@@ -85,42 +85,8 @@
   };
 })();
 
-$(function () {
-  var swiper = new Swiper(".carousel-gallery .swiper-container", {
-    effect: "slide",
-    speed: 900,
-    slidesPerView: 5,
-    spaceBetween: 20,
-    simulateTouch: true,
-    autoplay: {
-      delay: 5000,
-      stopOnLastSlide: false,
-      disableOnInteraction: false,
-    },
-    pagination: {
-      el: ".carousel-gallery .swiper-pagination",
-      clickable: true,
-    },
-    breakpoints: {
-      // when window width is <= 320px
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 5,
-      },
-      // when window width is <= 480px
-      425: {
-        slidesPerView: 2,
-        spaceBetween: 10,
-      },
-      // when window width is <= 640px
-      768: {
-        slidesPerView: 3,
-        spaceBetween: 20,
-      },
-    },
-  }); /*http://idangero.us/swiper/api/*/
-});
-const galleryItems = document.getElementById("gallery-swiper");
+window.addEventListener("load", (event) => {
+  const galleryItems = document.getElementById("gallery-swiper");
 const galleryImgs = [
   "1.jpg",
   "2.jpg",
@@ -160,7 +126,7 @@ const galleryImgs = [
 const htmlString = galleryImgs
   .map((item, index) => {
     return `
-<div class="swiper-slide">
+<div key=${index} class="swiper-slide">
         <a href="./assets/images/gallery/${item}" data-fancybox="gallery">
             <div class="image" style="background-image: url(./assets/images/gallery/${item})">
                 <div class="overlay">
@@ -173,3 +139,44 @@ const htmlString = galleryImgs
   })
   .join("");
 galleryItems.innerHTML = htmlString;
+});
+
+  
+
+$(function () {
+  var swiper = new Swiper(".carousel-gallery .swiper-container", {
+    effect: "slide",
+    speed: 400,
+    slidesPerView: 5,
+    spaceBetween: 20,
+    simulateTouch: true,
+    autoplay: {
+      delay: 3000,
+      stopOnLastSlide: false,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+      dynamicBullets: true,
+    },
+    breakpoints: {
+      // when window width is <= 320px
+      375: {
+        slidesPerView: 1,
+        spaceBetween: 5,
+      },
+      // when window width is <= 480px
+      425: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      // when window width is <= 640px
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 20,
+      },
+    },
+  }); /*http://idangero.us/swiper/api/*/
+});
+
