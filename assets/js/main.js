@@ -84,13 +84,16 @@
 const galleryItems1 = document.getElementById("gallery-swiper1");
 const galleryItems2 = document.getElementById("gallery-swiper2");
 const galleryItems3 = document.getElementById("gallery-swiper3");
+const galleryItems4 = document.getElementById("gallery-swiper4");
 const galleryImgs = [];
 Array.from({ length: 34 }, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
 
 const sheGalleriaImgs = [];
 Array.from({ length: 29 }, (_, i) => sheGalleriaImgs.push(`${i + 1}.jpg`));
 const igImgs = [];
-Array.from({ length: 5 }, (_, i) => igImgs.push(`${i + 1}.jpg`));
+Array.from({ length: 10 }, (_, i) => igImgs.push(`${i + 1}.jpg`));
+const sparkImgs = [];
+Array.from({ length: 7}, (_, i) => sparkImgs.push(`${i + 1}.jpg`));
 
 const htmlString = galleryImgs
   .map((item, index) => {
@@ -143,6 +146,24 @@ const IGhtmlString = igImgs
   })
   .join("");
 galleryItems2.innerHTML = IGhtmlString;
+
+
+const SKkhtmlString = sparkImgs
+  .map((item, index) => {
+    return `
+<div key=${index} class="swiper-slide">
+        <a href="./assets/images/SPARK/SK${item}" data-fancybox="gallery">
+            <div class="image" style="background-image: url(./assets/images/SPARK/SK${item})">
+                <div class="overlay">
+                    <em class="mdi mdi-magnify-plus"></em>
+                </div>
+            </div>
+        </a>
+    </div>
+`;
+  })
+  .join("");
+galleryItems4.innerHTML = SKkhtmlString;
 
 $(function () {
   var swiper = new Swiper(".carousel-gallery .swiper-container", {
