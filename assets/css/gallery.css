@@ -1,11 +1,11 @@
-.gallery {
+/* .gallery {
   display: flex;
   flex-direction: column;
   gap: 2rem;
   align-items: center;
   justify-content: center;
   padding: 2rem 0;
-}
+} */
 
 .gallery > .container {
   display: flex;
@@ -29,6 +29,7 @@
   padding: 0;
   text-decoration: none;
 }
+
 
 /*Carousel Gallery*/
 .carousel-gallery {
@@ -90,9 +91,7 @@
 .carousel-gallery .swiper-pagination .swiper-pagination-bullet:hover {
   opacity: 0.7;
 }
-.carousel-gallery
-  .swiper-pagination
-  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+.carousel-gallery .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
   background-color: #d63031;
   transform: scale(1.1, 1.1);
 }
@@ -112,6 +111,7 @@
     overflow: hidden;
   }
 }
+
 
 .IGNITE {
   display: flex;
