@@ -86,7 +86,7 @@ const galleryItems2 = document.getElementById("gallery-swiper2");
 const galleryItems3 = document.getElementById("gallery-swiper3");
 const galleryItems4 = document.getElementById("gallery-swiper4");
 const galleryImgs = [];
-Array.from({ length: 34 }, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
+Array.from({ length: 37 }, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
 
 const sheGalleriaImgs = [];
 Array.from({ length: 29 }, (_, i) => sheGalleriaImgs.push(`${i + 1}.jpg`));
