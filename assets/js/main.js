@@ -81,44 +81,17 @@
   };
 })();
 
+const galleryItems1 = document.getElementById("gallery-swiper1");
+const galleryItems2 = document.getElementById("gallery-swiper2");
+const galleryItems3 = document.getElementById("gallery-swiper3");
+const galleryImgs = [];
+Array.from({ length: 34 }, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
 
-const galleryItems = document.getElementById("gallery-swiper");
-const galleryImgs = [
-  "1.jpg",
-  "2.jpg",
-  "3.jpg",
-  "4.jpg",
-  "5.jpg",
-  "6.jpg",
-  "7.jpg",
-  "8.jpg",
-  "9.jpg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg",
-  "13.jpg",
-  "14.jpg",
-  "15.jpg",
-  "16.jpg",
-  "17.jpg",
-  "18.jpg",
-  "19.jpg",
-  "20.jpg",
-  "21.jpg",
-  "22.jpg",
-  "23.jpg",
-  "24.jpg",
-  "25.jpg",
-  "26.jpg",
-  "27.jpg",
-  "28.jpg",
-  "29.jpg",
-  "30.jpg",
-  "31.jpg",
-  "32.jpg",
-  "33.jpg",
-  "34.jpg",
-];
+const sheGalleriaImgs = [];
+Array.from({ length: 29 }, (_, i) => sheGalleriaImgs.push(`${i + 1}.jpg`));
+const igImgs = [];
+Array.from({ length: 5 }, (_, i) => igImgs.push(`${i + 1}.jpg`));
+
 const htmlString = galleryImgs
   .map((item, index) => {
     return `
@@ -134,12 +107,46 @@ const htmlString = galleryImgs
 `;
   })
   .join("");
-galleryItems.innerHTML = htmlString;
+galleryItems1.innerHTML = htmlString;
 
-$(function(){
-  
-  var swiper = new Swiper('.carousel-gallery .swiper-container', {
-    effect: 'slide',
+const SGhtmlString = sheGalleriaImgs
+  .map((item, index) => {
+    return `
+<div key=${index} class="swiper-slide">
+        <a href="./assets/images/SHE GALERIA/she${item}" data-fancybox="gallery">
+            <div class="image" style="background-image: url('./assets/images/SHE GALERIA/she${item}')">
+                <div class="overlay">
+                    <em class="mdi mdi-magnify-plus"></em>
+                </div>
+            </div>
+        </a>
+    </div>
+`;
+  })
+  .join("");
+galleryItems3.innerHTML = SGhtmlString;
+console.log(igImgs);
+
+const IGhtmlString = igImgs
+  .map((item, index) => {
+    return `
+<div key=${index} class="swiper-slide">
+        <a href="./assets/images/IGNITE/ig${item}" data-fancybox="gallery">
+            <div class="image" style="background-image: url('./assets/images/IGNITE/ig${item}')">
+                <div class="overlay">
+                    <em class="mdi mdi-magnify-plus"></em>
+                </div>
+            </div>
+        </a>
+    </div>
+`;
+  })
+  .join("");
+galleryItems2.innerHTML = IGhtmlString;
+
+$(function () {
+  var swiper = new Swiper(".carousel-gallery .swiper-container", {
+    effect: "slide",
     speed: 900,
     slidesPerView: 5,
     spaceBetween: 20,
@@ -147,37 +154,29 @@ $(function(){
     autoplay: {
       delay: 5000,
       stopOnLastSlide: false,
-      disableOnInteraction: false
+      disableOnInteraction: false,
     },
     pagination: {
-      el: '.carousel-gallery .swiper-pagination',
+      el: ".carousel-gallery .swiper-pagination",
       // clickable: true,
-      dynamicBullets: true
+      dynamicBullets: true,
     },
     breakpoints: {
       // when window width is <= 320px
       320: {
         slidesPerView: 1,
-        spaceBetween: 5
+        spaceBetween: 5,
       },
       // when window width is <= 480px
       425: {
         slidesPerView: 2,
-        spaceBetween: 10
+        spaceBetween: 10,
       },
       // when window width is <= 640px
       768: {
         slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
+        spaceBetween: 20,
+      },
+    },
   }); /*http://idangero.us/swiper/api/*/
-
-  
-
 });
-
-  
-
-
-
