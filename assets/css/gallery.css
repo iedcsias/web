@@ -112,3 +112,37 @@
     overflow: hidden;
   }
 }
+
+.IGNITE {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.IGNITE_item {
+  scroll-snap-align: center;
+  min-width: 75%;
+}
+.IGNITE_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.SHE {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+.SHE_item {
+  scroll-snap-align: center;
+  min-width: 75%;
+}
+.SHE_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
