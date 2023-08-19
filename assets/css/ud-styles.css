@@ -204,7 +204,8 @@ p {
 
 /* ===== Header CSS ===== */
 .ud-header {
-  position: absolute;
+  position: sticky;
+  background-color: #3056d3;
   top: 0;
   left: 0;
   width: 100%;
