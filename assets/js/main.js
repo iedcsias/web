@@ -85,8 +85,9 @@ const galleryItems1 = document.getElementById("gallery-swiper1");
 const galleryItems2 = document.getElementById("gallery-swiper2");
 const galleryItems3 = document.getElementById("gallery-swiper3");
 const galleryItems4 = document.getElementById("gallery-swiper4");
+
 const galleryImgs = [];
-Array.from({ length: 37 }, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
+Array.from({ length: 45}, (_, i) => galleryImgs.push(`${i + 1}.jpg`));
 
 const sheGalleriaImgs = [];
 Array.from({ length: 29 }, (_, i) => sheGalleriaImgs.push(`${i + 1}.jpg`));
@@ -95,7 +96,8 @@ Array.from({ length: 10 }, (_, i) => igImgs.push(`${i + 1}.jpg`));
 const sparkImgs = [];
 Array.from({ length: 7}, (_, i) => sparkImgs.push(`${i + 1}.jpg`));
 
-const htmlString = galleryImgs
+
+const htmlString = galleryImgs.reverse()
   .map((item, index) => {
     return `
 <div key=${index} class="swiper-slide">
@@ -165,6 +167,9 @@ const SKkhtmlString = sparkImgs
   .join("");
 galleryItems4.innerHTML = SKkhtmlString;
 
+
+
+
 $(function () {
   var swiper = new Swiper(".carousel-gallery .swiper-container", {
     effect: "slide",
@@ -201,3 +206,8 @@ $(function () {
     },
   }); /*http://idangero.us/swiper/api/*/
 });
+
+
+
+
+
